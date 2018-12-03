@@ -123,7 +123,7 @@ class GPXParser:
 
         except Exception as e:
             # The exception here can be a lxml or ElementTree exception.
-            log.debug('Error in:\n%s\n-----------\n' % self.xml, exc_info=True)
+            log.exception('Error in:\n%s\n-----------\n', self.xml)
 
             # The library should work in the same way regardless of the
             # underlying XML parser that's why the exception thrown
@@ -132,7 +132,9 @@ class GPXParser:
             #
             # But, if the user needs the original exception (lxml or ElementTree)
             # it is available with GPXXMLSyntaxException.original_exception:
-            raise mod_gpx.GPXXMLSyntaxException('Error parsing XML: %s' % str(e), e)
+            raise mod_gpx.GPXXMLSyntaxException(
+                'Error parsing XML: %s' % str(e), e
+            )
 
         if root is None:
             raise mod_gpx.GPXException('Document must have a `gpx` root node.')

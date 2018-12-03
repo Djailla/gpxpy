@@ -50,65 +50,67 @@ DEFAULT_STOPPED_SPEED_THRESHOLD = 1
 
 # Fields used for all point elements (route point, track point, waypoint):
 GPX_10_POINT_FIELDS = [
-        mod_gpxfield.GPXField('latitude', attribute='lat', type=mod_gpxfield.FLOAT_TYPE, mandatory=True),
-        mod_gpxfield.GPXField('longitude', attribute='lon', type=mod_gpxfield.FLOAT_TYPE, mandatory=True),
-        mod_gpxfield.GPXField('elevation', 'ele', type=mod_gpxfield.FLOAT_TYPE),
-        mod_gpxfield.GPXField('time', type=mod_gpxfield.TIME_TYPE),
-        mod_gpxfield.GPXField('magnetic_variation', 'magvar', type=mod_gpxfield.FLOAT_TYPE),
-        mod_gpxfield.GPXField('geoid_height', 'geoidheight', type=mod_gpxfield.FLOAT_TYPE),
-        mod_gpxfield.GPXField('name'),
-        mod_gpxfield.GPXField('comment', 'cmt'),
-        mod_gpxfield.GPXField('description', 'desc'),
-        mod_gpxfield.GPXField('source', 'src'),
-        mod_gpxfield.GPXField('link', 'url'),
-        mod_gpxfield.GPXField('link_text', 'urlname'),
-        mod_gpxfield.GPXField('symbol', 'sym'),
-        mod_gpxfield.GPXField('type'),
-        mod_gpxfield.GPXField('type_of_gpx_fix', 'fix', possible=('none', '2d', '3d', 'dgps', 'pps',)),
-        mod_gpxfield.GPXField('satellites', 'sat', type=mod_gpxfield.INT_TYPE),
-        mod_gpxfield.GPXField('horizontal_dilution', 'hdop', type=mod_gpxfield.FLOAT_TYPE),
-        mod_gpxfield.GPXField('vertical_dilution', 'vdop', type=mod_gpxfield.FLOAT_TYPE),
-        mod_gpxfield.GPXField('position_dilution', 'pdop', type=mod_gpxfield.FLOAT_TYPE),
-        mod_gpxfield.GPXField('age_of_dgps_data', 'ageofdgpsdata', type=mod_gpxfield.FLOAT_TYPE),
-        mod_gpxfield.GPXField('dgps_id', 'dgpsid'),
+    mod_gpxfield.GPXField('latitude', attribute='lat', type=mod_gpxfield.FLOAT_TYPE, mandatory=True),
+    mod_gpxfield.GPXField('longitude', attribute='lon', type=mod_gpxfield.FLOAT_TYPE, mandatory=True),
+    mod_gpxfield.GPXField('elevation', 'ele', type=mod_gpxfield.FLOAT_TYPE),
+    mod_gpxfield.GPXField('time', type=mod_gpxfield.TIME_TYPE),
+    mod_gpxfield.GPXField('magnetic_variation', 'magvar', type=mod_gpxfield.FLOAT_TYPE),
+    mod_gpxfield.GPXField('geoid_height', 'geoidheight', type=mod_gpxfield.FLOAT_TYPE),
+    mod_gpxfield.GPXField('name'),
+    mod_gpxfield.GPXField('comment', 'cmt'),
+    mod_gpxfield.GPXField('description', 'desc'),
+    mod_gpxfield.GPXField('source', 'src'),
+    mod_gpxfield.GPXField('link', 'url'),
+    mod_gpxfield.GPXField('link_text', 'urlname'),
+    mod_gpxfield.GPXField('symbol', 'sym'),
+    mod_gpxfield.GPXField('type'),
+    mod_gpxfield.GPXField('type_of_gpx_fix', 'fix', possible=('none', '2d', '3d', 'dgps', 'pps',)),
+    mod_gpxfield.GPXField('satellites', 'sat', type=mod_gpxfield.INT_TYPE),
+    mod_gpxfield.GPXField('horizontal_dilution', 'hdop', type=mod_gpxfield.FLOAT_TYPE),
+    mod_gpxfield.GPXField('vertical_dilution', 'vdop', type=mod_gpxfield.FLOAT_TYPE),
+    mod_gpxfield.GPXField('position_dilution', 'pdop', type=mod_gpxfield.FLOAT_TYPE),
+    mod_gpxfield.GPXField('age_of_dgps_data', 'ageofdgpsdata', type=mod_gpxfield.FLOAT_TYPE),
+    mod_gpxfield.GPXField('dgps_id', 'dgpsid'),
 ]
 GPX_11_POINT_FIELDS = [
-        # See GPX for description of text fields
-        mod_gpxfield.GPXField('latitude', attribute='lat', type=mod_gpxfield.FLOAT_TYPE, mandatory=True),
-        mod_gpxfield.GPXField('longitude', attribute='lon', type=mod_gpxfield.FLOAT_TYPE, mandatory=True),
-        mod_gpxfield.GPXField('elevation', 'ele', type=mod_gpxfield.FLOAT_TYPE),
-        mod_gpxfield.GPXField('time', type=mod_gpxfield.TIME_TYPE),
-        mod_gpxfield.GPXField('magnetic_variation', 'magvar', type=mod_gpxfield.FLOAT_TYPE),
-        mod_gpxfield.GPXField('geoid_height', 'geoidheight', type=mod_gpxfield.FLOAT_TYPE),
-        mod_gpxfield.GPXField('name'),
-        mod_gpxfield.GPXField('comment', 'cmt'),
-        mod_gpxfield.GPXField('description', 'desc'),
-        mod_gpxfield.GPXField('source', 'src'),
-        'link:@link',
-            mod_gpxfield.GPXField('link', attribute='href'),
-            mod_gpxfield.GPXField('link_text', tag='text'),
-            mod_gpxfield.GPXField('link_type', tag='type'),
-        '/link',
-        mod_gpxfield.GPXField('symbol', 'sym'),
-        mod_gpxfield.GPXField('type'),
-        mod_gpxfield.GPXField('type_of_gpx_fix', 'fix', possible=('none', '2d', '3d', 'dgps', 'pps',)),
-        mod_gpxfield.GPXField('satellites', 'sat', type=mod_gpxfield.INT_TYPE),
-        mod_gpxfield.GPXField('horizontal_dilution', 'hdop', type=mod_gpxfield.FLOAT_TYPE),
-        mod_gpxfield.GPXField('vertical_dilution', 'vdop', type=mod_gpxfield.FLOAT_TYPE),
-        mod_gpxfield.GPXField('position_dilution', 'pdop', type=mod_gpxfield.FLOAT_TYPE),
-        mod_gpxfield.GPXField('age_of_dgps_data', 'ageofdgpsdata', type=mod_gpxfield.FLOAT_TYPE),
-        mod_gpxfield.GPXField('dgps_id', 'dgpsid'),
-        mod_gpxfield.GPXExtensionsField('extensions', is_list=True),
+    # See GPX for description of text fields
+    mod_gpxfield.GPXField('latitude', attribute='lat', type=mod_gpxfield.FLOAT_TYPE, mandatory=True),
+    mod_gpxfield.GPXField('longitude', attribute='lon', type=mod_gpxfield.FLOAT_TYPE, mandatory=True),
+    mod_gpxfield.GPXField('elevation', 'ele', type=mod_gpxfield.FLOAT_TYPE),
+    mod_gpxfield.GPXField('time', type=mod_gpxfield.TIME_TYPE),
+    mod_gpxfield.GPXField('magnetic_variation', 'magvar', type=mod_gpxfield.FLOAT_TYPE),
+    mod_gpxfield.GPXField('geoid_height', 'geoidheight', type=mod_gpxfield.FLOAT_TYPE),
+    mod_gpxfield.GPXField('name'),
+    mod_gpxfield.GPXField('comment', 'cmt'),
+    mod_gpxfield.GPXField('description', 'desc'),
+    mod_gpxfield.GPXField('source', 'src'),
+    'link:@link',
+    mod_gpxfield.GPXField('link', attribute='href'),
+    mod_gpxfield.GPXField('link_text', tag='text'),
+    mod_gpxfield.GPXField('link_type', tag='type'),
+    '/link',
+    mod_gpxfield.GPXField('symbol', 'sym'),
+    mod_gpxfield.GPXField('type'),
+    mod_gpxfield.GPXField('type_of_gpx_fix', 'fix', possible=('none', '2d', '3d', 'dgps', 'pps',)),
+    mod_gpxfield.GPXField('satellites', 'sat', type=mod_gpxfield.INT_TYPE),
+    mod_gpxfield.GPXField('horizontal_dilution', 'hdop', type=mod_gpxfield.FLOAT_TYPE),
+    mod_gpxfield.GPXField('vertical_dilution', 'vdop', type=mod_gpxfield.FLOAT_TYPE),
+    mod_gpxfield.GPXField('position_dilution', 'pdop', type=mod_gpxfield.FLOAT_TYPE),
+    mod_gpxfield.GPXField('age_of_dgps_data', 'ageofdgpsdata', type=mod_gpxfield.FLOAT_TYPE),
+    mod_gpxfield.GPXField('dgps_id', 'dgpsid'),
+    mod_gpxfield.GPXExtensionsField('extensions', is_list=True),
 ]
 
 # GPX1.0 track points have two more fields after time
 # Note that this is not true for GPX1.1
-GPX_TRACK_POINT_FIELDS = GPX_10_POINT_FIELDS[:4] \
-        + [ \
-                mod_gpxfield.GPXField('course', type=mod_gpxfield.FLOAT_TYPE), \
-                mod_gpxfield.GPXField('speed', type=mod_gpxfield.FLOAT_TYPE) \
-          ] \
-        + GPX_10_POINT_FIELDS[4:]
+GPX_TRACK_POINT_FIELDS = (
+    GPX_10_POINT_FIELDS[:4] +
+    [
+        mod_gpxfield.GPXField('course', type=mod_gpxfield.FLOAT_TYPE),
+        mod_gpxfield.GPXField('speed', type=mod_gpxfield.FLOAT_TYPE)
+    ] +
+    GPX_10_POINT_FIELDS[4:]
+)
 
 # When possible, the result of various methods are named tuples defined here:
 TimeBounds = mod_collections.namedtuple(
@@ -141,10 +143,10 @@ class GPXException(Exception):
 
 class GPXBounds:
     gpx_10_fields = gpx_11_fields = [
-            mod_gpxfield.GPXField('min_latitude', attribute='minlat', type=mod_gpxfield.FLOAT_TYPE),
-            mod_gpxfield.GPXField('max_latitude', attribute='maxlat', type=mod_gpxfield.FLOAT_TYPE),
-            mod_gpxfield.GPXField('min_longitude', attribute='minlon', type=mod_gpxfield.FLOAT_TYPE),
-            mod_gpxfield.GPXField('max_longitude', attribute='maxlon', type=mod_gpxfield.FLOAT_TYPE),
+        mod_gpxfield.GPXField('min_latitude', attribute='minlat', type=mod_gpxfield.FLOAT_TYPE),
+        mod_gpxfield.GPXField('max_latitude', attribute='maxlat', type=mod_gpxfield.FLOAT_TYPE),
+        mod_gpxfield.GPXField('min_longitude', attribute='minlon', type=mod_gpxfield.FLOAT_TYPE),
+        mod_gpxfield.GPXField('max_longitude', attribute='maxlon', type=mod_gpxfield.FLOAT_TYPE),
     ]
 
     __slots__ = ('min_latitude', 'max_latitude', 'min_longitude', 'max_longitude')
@@ -217,8 +219,13 @@ class GPXWaypoint(mod_geo.Location):
 
     def __repr__(self):
         representation = '%s, %s' % (self.latitude, self.longitude)
-        for attribute in 'elevation', 'time', 'name', 'description', 'symbol', 'type', 'comment', \
-                'horizontal_dilution', 'vertical_dilution', 'position_dilution':
+        attributes = [
+            'elevation', 'time', 'name', 'description', 'symbol', 'type',
+            'comment', 'horizontal_dilution', 'vertical_dilution',
+            'position_dilution',
+        ]
+
+        for attribute in attributes:
             value = getattr(self, attribute)
             if value is not None:
                 representation += ', %s=%s' % (attribute, repr(value))
@@ -295,8 +302,12 @@ class GPXRoutePoint(mod_geo.Location):
 
     def __repr__(self):
         representation = '%s, %s' % (self.latitude, self.longitude)
-        for attribute in 'elevation', 'time', 'name', 'description', 'symbol', 'type', 'comment', \
-                'horizontal_dilution', 'vertical_dilution', 'position_dilution':
+        attributes = [
+            'elevation', 'time', 'name', 'description', 'symbol', 'type',
+            'comment', 'horizontal_dilution', 'vertical_dilution',
+            'position_dilution',
+        ]
+        for attribute in attributes:
             value = getattr(self, attribute)
             if value is not None:
                 representation += ', %s=%s' % (attribute, repr(value))
@@ -322,30 +333,30 @@ class GPXRoutePoint(mod_geo.Location):
 
 class GPXRoute:
     gpx_10_fields = [
-            mod_gpxfield.GPXField('name'),
-            mod_gpxfield.GPXField('comment', 'cmt'),
-            mod_gpxfield.GPXField('description', 'desc'),
-            mod_gpxfield.GPXField('source', 'src'),
-            mod_gpxfield.GPXField('link', 'url'),
-            mod_gpxfield.GPXField('link_text', 'urlname'),
-            mod_gpxfield.GPXField('number', type=mod_gpxfield.INT_TYPE),
-            mod_gpxfield.GPXComplexField('points', tag='rtept', classs=GPXRoutePoint, is_list=True),
+        mod_gpxfield.GPXField('name'),
+        mod_gpxfield.GPXField('comment', 'cmt'),
+        mod_gpxfield.GPXField('description', 'desc'),
+        mod_gpxfield.GPXField('source', 'src'),
+        mod_gpxfield.GPXField('link', 'url'),
+        mod_gpxfield.GPXField('link_text', 'urlname'),
+        mod_gpxfield.GPXField('number', type=mod_gpxfield.INT_TYPE),
+        mod_gpxfield.GPXComplexField('points', tag='rtept', classs=GPXRoutePoint, is_list=True),
     ]
     gpx_11_fields = [
-            # See GPX for description of text fields
-            mod_gpxfield.GPXField('name'),
-            mod_gpxfield.GPXField('comment', 'cmt'),
-            mod_gpxfield.GPXField('description', 'desc'),
-            mod_gpxfield.GPXField('source', 'src'),
-            'link:@link',
-                mod_gpxfield.GPXField('link', attribute='href'),
-                mod_gpxfield.GPXField('link_text', tag='text'),
-                mod_gpxfield.GPXField('link_type', tag='type'),
-            '/link',
-            mod_gpxfield.GPXField('number', type=mod_gpxfield.INT_TYPE),
-            mod_gpxfield.GPXField('type'),
-            mod_gpxfield.GPXExtensionsField('extensions', is_list=True),
-            mod_gpxfield.GPXComplexField('points', tag='rtept', classs=GPXRoutePoint, is_list=True),
+        # See GPX for description of text fields
+        mod_gpxfield.GPXField('name'),
+        mod_gpxfield.GPXField('comment', 'cmt'),
+        mod_gpxfield.GPXField('description', 'desc'),
+        mod_gpxfield.GPXField('source', 'src'),
+        'link:@link',
+        mod_gpxfield.GPXField('link', attribute='href'),
+        mod_gpxfield.GPXField('link_text', tag='text'),
+        mod_gpxfield.GPXField('link_type', tag='type'),
+        '/link',
+        mod_gpxfield.GPXField('number', type=mod_gpxfield.INT_TYPE),
+        mod_gpxfield.GPXField('type'),
+        mod_gpxfield.GPXExtensionsField('extensions', is_list=True),
+        mod_gpxfield.GPXComplexField('points', tag='rtept', classs=GPXRoutePoint, is_list=True),
     ]
 
     __slots__ = ('name', 'comment', 'description', 'source', 'link',
@@ -529,8 +540,11 @@ class GPXTrackPoint(mod_geo.Location):
 
     def __repr__(self):
         representation = '%s, %s' % (self.latitude, self.longitude)
-        for attribute in 'elevation', 'time', 'symbol', 'comment', 'horizontal_dilution', \
-                'vertical_dilution', 'position_dilution', 'speed', 'name':
+        attributes = [
+            'elevation', 'time', 'symbol', 'comment', 'horizontal_dilution',
+            'vertical_dilution', 'position_dilution', 'speed', 'name',
+        ]
+        for attribute in attributes:
             value = getattr(self, attribute)
             if value is not None:
                 representation += ', %s=%s' % (attribute, repr(value))
@@ -617,11 +631,11 @@ class GPXTrackPoint(mod_geo.Location):
 
 class GPXTrackSegment:
     gpx_10_fields = [
-            mod_gpxfield.GPXComplexField('points', tag='trkpt', classs=GPXTrackPoint, is_list=True),
+        mod_gpxfield.GPXComplexField('points', tag='trkpt', classs=GPXTrackPoint, is_list=True),
     ]
     gpx_11_fields = [
-            mod_gpxfield.GPXComplexField('points', tag='trkpt', classs=GPXTrackPoint, is_list=True),
-            mod_gpxfield.GPXExtensionsField('extensions', is_list=True),
+        mod_gpxfield.GPXComplexField('points', tag='trkpt', classs=GPXTrackPoint, is_list=True),
+        mod_gpxfield.GPXExtensionsField('extensions', is_list=True),
     ]
 
     __slots__ = ('points', 'extensions', )
@@ -632,7 +646,8 @@ class GPXTrackSegment:
 
     def simplify(self, max_distance=None):
         """
-        Simplify using the Ramer-Douglas-Peucker algorithm: http://en.wikipedia.org/wiki/Ramer-Douglas-Peucker_algorithm
+        Simplify using the Ramer-Douglas-Peucker algorithm:
+        http://en.wikipedia.org/wiki/Ramer-Douglas-Peucker_algorithm
         """
         if not max_distance:
             max_distance = 10
@@ -1052,8 +1067,8 @@ class GPXTrackSegment:
         assert len(interval) == len(distances)
 
         return list(map(
-                lambda distance: (distance / from_start_to_end) if from_start_to_end else 0,
-                distances))
+            lambda distance: (distance / from_start_to_end) if from_start_to_end else 0,
+            distances))
 
     def get_duration(self):
         """
@@ -1127,7 +1142,7 @@ class GPXTrackSegment:
         elevations = filter(lambda elevation: elevation is not None, elevations)
         elevations = list(elevations)
 
-        if len(elevations) == 0:
+        if not elevations:
             return MinimumMaximum(None, None)
 
         return MinimumMaximum(min(elevations), max(elevations))
@@ -1153,7 +1168,10 @@ class GPXTrackSegment:
             return None
 
         if not first_time <= time <= last_time:
-            log.debug('Not in track (search for:%s, start:%s, end:%s)' % (time, first_time, last_time))
+            log.debug(
+                'Not in track (search for:%s, start:%s, end:%s)',
+                time, first_time, last_time
+            )
             return None
 
         for point in self.points:
@@ -1176,7 +1194,6 @@ class GPXTrackSegment:
                 result = track_point
             else:
                 distance = track_point.distance_2d(location)
-                #print current_distance, distance
                 if not current_distance or distance < current_distance:
                     current_distance = distance
                     result = track_point
@@ -1255,13 +1272,17 @@ class GPXTrackSegment:
 
             if horizontal:
                 old_latitude = self.points[i].latitude
-                new_latitude = SMOOTHING_RATIO[0] * latitudes[i - 1] + \
-                    SMOOTHING_RATIO[1] * latitudes[i] + \
+                new_latitude = (
+                    SMOOTHING_RATIO[0] * latitudes[i - 1] +
+                    SMOOTHING_RATIO[1] * latitudes[i] +
                     SMOOTHING_RATIO[2] * latitudes[i + 1]
+                )
                 old_longitude = self.points[i].longitude
-                new_longitude = SMOOTHING_RATIO[0] * longitudes[i - 1] + \
-                    SMOOTHING_RATIO[1] * longitudes[i] + \
+                new_longitude = (
+                    SMOOTHING_RATIO[0] * longitudes[i - 1] +
+                    SMOOTHING_RATIO[1] * longitudes[i] +
                     SMOOTHING_RATIO[2] * longitudes[i + 1]
+                )
 
                 if not remove_extremes:
                     self.points[i].latitude = new_latitude
@@ -1270,14 +1291,18 @@ class GPXTrackSegment:
                 # TODO: This is not ideal.. Because if there are points A, B and C on the same
                 # line but B is very close to C... This would remove B (and possibly) A even though
                 # it is not an extreme. This is the reason for this algorithm:
-                d1 = mod_geo.distance(latitudes[i - 1], longitudes[i - 1], None, latitudes[i], longitudes[i], None)
-                d2 = mod_geo.distance(latitudes[i + 1], longitudes[i + 1], None, latitudes[i], longitudes[i], None)
-                d = mod_geo.distance(latitudes[i - 1], longitudes[i - 1], None, latitudes[i + 1], longitudes[i + 1], None)
+                d1 = mod_geo.distance(latitudes[i - 1], longitudes[i - 1], None,
+                                      latitudes[i], longitudes[i], None)
+                d2 = mod_geo.distance(latitudes[i + 1], longitudes[i + 1], None,
+                                      latitudes[i], longitudes[i], None)
+                d = mod_geo.distance(latitudes[i - 1], longitudes[i - 1], None,
+                                     latitudes[i + 1], longitudes[i + 1], None)
 
                 #print d1, d2, d, remove_extremes
 
                 if d1 + d2 > d * 1.5 and remove_extremes:
-                    d = mod_geo.distance(old_latitude, old_longitude, None, new_latitude, new_longitude, None)
+                    d = mod_geo.distance(old_latitude, old_longitude, None,
+                                         new_latitude, new_longitude, None)
                     #print "d, threshold = ", d, remove_2d_extremes_threshold
                     if d < remove_2d_extremes_threshold:
                         new_point = self.points[i]
@@ -1334,7 +1359,6 @@ class GPXTrackSegment:
 
         return len(self.points) > 2 and float(found) / float(len(self.points)) > .75
 
-
     def __repr__(self):
         return 'GPXTrackSegment(points=[%s])' % ('...' if self.points else '')
 
@@ -1344,30 +1368,30 @@ class GPXTrackSegment:
 
 class GPXTrack:
     gpx_10_fields = [
-            mod_gpxfield.GPXField('name'),
-            mod_gpxfield.GPXField('comment', 'cmt'),
-            mod_gpxfield.GPXField('description', 'desc'),
-            mod_gpxfield.GPXField('source', 'src'),
-            mod_gpxfield.GPXField('link', 'url'),
-            mod_gpxfield.GPXField('link_text', 'urlname'),
-            mod_gpxfield.GPXField('number', type=mod_gpxfield.INT_TYPE),
-            mod_gpxfield.GPXComplexField('segments', tag='trkseg', classs=GPXTrackSegment, is_list=True),
+        mod_gpxfield.GPXField('name'),
+        mod_gpxfield.GPXField('comment', 'cmt'),
+        mod_gpxfield.GPXField('description', 'desc'),
+        mod_gpxfield.GPXField('source', 'src'),
+        mod_gpxfield.GPXField('link', 'url'),
+        mod_gpxfield.GPXField('link_text', 'urlname'),
+        mod_gpxfield.GPXField('number', type=mod_gpxfield.INT_TYPE),
+        mod_gpxfield.GPXComplexField('segments', tag='trkseg', classs=GPXTrackSegment, is_list=True),
     ]
     gpx_11_fields = [
-            # See GPX for text field description
-            mod_gpxfield.GPXField('name'),
-            mod_gpxfield.GPXField('comment', 'cmt'),
-            mod_gpxfield.GPXField('description', 'desc'),
-            mod_gpxfield.GPXField('source', 'src'),
-            'link:@link',
-                mod_gpxfield.GPXField('link', attribute='href'),
-                mod_gpxfield.GPXField('link_text', tag='text'),
-                mod_gpxfield.GPXField('link_type', tag='type'),
-            '/link',
-            mod_gpxfield.GPXField('number', type=mod_gpxfield.INT_TYPE),
-            mod_gpxfield.GPXField('type'),
-            mod_gpxfield.GPXExtensionsField('extensions', is_list=True),
-            mod_gpxfield.GPXComplexField('segments', tag='trkseg', classs=GPXTrackSegment, is_list=True),
+        # See GPX for text field description
+        mod_gpxfield.GPXField('name'),
+        mod_gpxfield.GPXField('comment', 'cmt'),
+        mod_gpxfield.GPXField('description', 'desc'),
+        mod_gpxfield.GPXField('source', 'src'),
+        'link:@link',
+        mod_gpxfield.GPXField('link', attribute='href'),
+        mod_gpxfield.GPXField('link_text', tag='text'),
+        mod_gpxfield.GPXField('link_type', tag='type'),
+        '/link',
+        mod_gpxfield.GPXField('number', type=mod_gpxfield.INT_TYPE),
+        mod_gpxfield.GPXField('type'),
+        mod_gpxfield.GPXExtensionsField('extensions', is_list=True),
+        mod_gpxfield.GPXComplexField('segments', tag='trkseg', classs=GPXTrackSegment, is_list=True),
     ]
 
     __slots__ = ('name', 'comment', 'description', 'source', 'link',
@@ -1435,7 +1459,7 @@ class GPXTrack:
         result = []
 
         for segment in self.segments:
-            if len(segment.points) > 0:
+            if segment.points:
                 result.append(segment)
 
         self.segments = result
@@ -1903,20 +1927,20 @@ class GPXTrack:
 
 class GPX:
     gpx_10_fields = [
-            mod_gpxfield.GPXField('version', attribute=True),
-            mod_gpxfield.GPXField('creator', attribute=True),
-            mod_gpxfield.GPXField('name'),
-            mod_gpxfield.GPXField('description', 'desc'),
-            mod_gpxfield.GPXField('author_name', 'author'),
-            mod_gpxfield.GPXField('author_email', 'email'),
-            mod_gpxfield.GPXField('link', 'url'),
-            mod_gpxfield.GPXField('link_text', 'urlname'),
-            mod_gpxfield.GPXField('time', type=mod_gpxfield.TIME_TYPE),
-            mod_gpxfield.GPXField('keywords'),
-            mod_gpxfield.GPXComplexField('bounds', classs=GPXBounds),
-            mod_gpxfield.GPXComplexField('waypoints', classs=GPXWaypoint, tag='wpt', is_list=True),
-            mod_gpxfield.GPXComplexField('routes', classs=GPXRoute, tag='rte', is_list=True),
-            mod_gpxfield.GPXComplexField('tracks', classs=GPXTrack, tag='trk', is_list=True),
+        mod_gpxfield.GPXField('version', attribute=True),
+        mod_gpxfield.GPXField('creator', attribute=True),
+        mod_gpxfield.GPXField('name'),
+        mod_gpxfield.GPXField('description', 'desc'),
+        mod_gpxfield.GPXField('author_name', 'author'),
+        mod_gpxfield.GPXField('author_email', 'email'),
+        mod_gpxfield.GPXField('link', 'url'),
+        mod_gpxfield.GPXField('link_text', 'urlname'),
+        mod_gpxfield.GPXField('time', type=mod_gpxfield.TIME_TYPE),
+        mod_gpxfield.GPXField('keywords'),
+        mod_gpxfield.GPXComplexField('bounds', classs=GPXBounds),
+        mod_gpxfield.GPXComplexField('waypoints', classs=GPXWaypoint, tag='wpt', is_list=True),
+        mod_gpxfield.GPXComplexField('routes', classs=GPXRoute, tag='rte', is_list=True),
+        mod_gpxfield.GPXComplexField('tracks', classs=GPXTrack, tag='trk', is_list=True),
     ]
     # Text fields serialize as empty container tags, dependents are
     # are listed after as 'tag:dep1:dep2:dep3'. If no dependents are
@@ -1926,39 +1950,39 @@ class GPX:
     # format is 'tag:@dep2'. No optional dependents need to be listed.
     # Extensions not yet supported
     gpx_11_fields = [
-            mod_gpxfield.GPXField('version', attribute=True),
-            mod_gpxfield.GPXField('creator', attribute=True),
-            'metadata:name:description:author_name:author_email:author_link:copyright_author:copyright_year:copyright_license:link:time:keywords:bounds',
-                mod_gpxfield.GPXField('name', 'name'),
-                mod_gpxfield.GPXField('description', 'desc'),
-                'author:author_name:author_email:author_link',
-                    mod_gpxfield.GPXField('author_name', 'name'),
-                    mod_gpxfield.GPXEmailField('author_email', 'email'),
-                    'link:@author_link',
-                        mod_gpxfield.GPXField('author_link', attribute='href'),
-                        mod_gpxfield.GPXField('author_link_text', tag='text'),
-                        mod_gpxfield.GPXField('author_link_type', tag='type'),
-                    '/link',
-                '/author',
-                'copyright:copyright_author:copyright_year:copyright_license',
-                    mod_gpxfield.GPXField('copyright_author', attribute='author'),
-                    mod_gpxfield.GPXField('copyright_year', tag='year'),
-                    mod_gpxfield.GPXField('copyright_license', tag='license'),
-                '/copyright',
-                'link:@link',
-                    mod_gpxfield.GPXField('link', attribute='href'),
-                    mod_gpxfield.GPXField('link_text', tag='text'),
-                    mod_gpxfield.GPXField('link_type', tag='type'),
-                '/link',
-                mod_gpxfield.GPXField('time', type=mod_gpxfield.TIME_TYPE),
-                mod_gpxfield.GPXField('keywords'),
-                mod_gpxfield.GPXComplexField('bounds', classs=GPXBounds),
-                mod_gpxfield.GPXExtensionsField('metadata_extensions', tag='extensions'),
-            '/metadata',
-            mod_gpxfield.GPXComplexField('waypoints', classs=GPXWaypoint, tag='wpt', is_list=True),
-            mod_gpxfield.GPXComplexField('routes', classs=GPXRoute, tag='rte', is_list=True),
-            mod_gpxfield.GPXComplexField('tracks', classs=GPXTrack, tag='trk', is_list=True),
-            mod_gpxfield.GPXExtensionsField('extensions', is_list=True),
+        mod_gpxfield.GPXField('version', attribute=True),
+        mod_gpxfield.GPXField('creator', attribute=True),
+        'metadata:name:description:author_name:author_email:author_link:copyright_author:copyright_year:copyright_license:link:time:keywords:bounds',
+        mod_gpxfield.GPXField('name', 'name'),
+        mod_gpxfield.GPXField('description', 'desc'),
+        'author:author_name:author_email:author_link',
+        mod_gpxfield.GPXField('author_name', 'name'),
+        mod_gpxfield.GPXEmailField('author_email', 'email'),
+        'link:@author_link',
+        mod_gpxfield.GPXField('author_link', attribute='href'),
+        mod_gpxfield.GPXField('author_link_text', tag='text'),
+        mod_gpxfield.GPXField('author_link_type', tag='type'),
+        '/link',
+        '/author',
+        'copyright:copyright_author:copyright_year:copyright_license',
+        mod_gpxfield.GPXField('copyright_author', attribute='author'),
+        mod_gpxfield.GPXField('copyright_year', tag='year'),
+        mod_gpxfield.GPXField('copyright_license', tag='license'),
+        '/copyright',
+        'link:@link',
+        mod_gpxfield.GPXField('link', attribute='href'),
+        mod_gpxfield.GPXField('link_text', tag='text'),
+        mod_gpxfield.GPXField('link_type', tag='type'),
+        '/link',
+        mod_gpxfield.GPXField('time', type=mod_gpxfield.TIME_TYPE),
+        mod_gpxfield.GPXField('keywords'),
+        mod_gpxfield.GPXComplexField('bounds', classs=GPXBounds),
+        mod_gpxfield.GPXExtensionsField('metadata_extensions', tag='extensions'),
+        '/metadata',
+        mod_gpxfield.GPXComplexField('waypoints', classs=GPXWaypoint, tag='wpt', is_list=True),
+        mod_gpxfield.GPXComplexField('routes', classs=GPXRoute, tag='rte', is_list=True),
+        mod_gpxfield.GPXComplexField('tracks', classs=GPXTrack, tag='trk', is_list=True),
+        mod_gpxfield.GPXExtensionsField('extensions', is_list=True),
     ]
 
     __slots__ = ('version', 'creator', 'name', 'description', 'author_name',
@@ -1998,7 +2022,8 @@ class GPX:
 
     def simplify(self, max_distance=None):
         """
-        Simplify using the Ramer-Douglas-Peucker algorithm: http://en.wikipedia.org/wiki/Ramer-Douglas-Peucker_algorithm
+        Simplify using the Ramer-Douglas-Peucker algorithm:
+        http://en.wikipedia.org/wiki/Ramer-Douglas-Peucker_algorithm
         """
         for track in self.tracks:
             track.simplify(max_distance=max_distance)
