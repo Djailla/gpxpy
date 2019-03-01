@@ -16,11 +16,10 @@
 
 import datetime as mod_datetime
 import re as mod_re
-import sys as mod_sys
-import math as mod_math
+import sys
 import xml.sax.saxutils as mod_saxutils
 
-PYTHON_VERSION = mod_sys.version.split(' ')[0]
+PYTHON_VERSION = sys.version.split(' ')[0]
 
 
 def to_xml(tag, attributes=None, content=None, default=None, escape=False, prettyprint=True, indent=''):

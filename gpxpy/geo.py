@@ -28,7 +28,7 @@ log = mod_logging.getLogger(__name__)
 EARTH_RADIUS = 6378.137 * 1000
 
 # One degree in meters:
-ONE_DEGREE = (2*mod_math.pi*EARTH_RADIUS) / 360  # ==> 111.319 km
+ONE_DEGREE = (2 * mod_math.pi * EARTH_RADIUS) / 360  # ==> 111.319 km
 
 
 def to_rad(x):
@@ -47,11 +47,11 @@ def haversine_distance(latitude_1, longitude_1, latitude_2, longitude_2):
     lat2 = to_rad(latitude_2)
 
     a = (
-        mod_math.sin(d_lat/2) * mod_math.sin(d_lat/2) +
-        mod_math.sin(d_lon/2) * mod_math.sin(d_lon/2) *
-        mod_math.cos(lat1) * mod_math.cos(lat2)
+        mod_math.sin(d_lat / 2) * mod_math.sin(d_lat / 2)
+        + mod_math.sin(d_lon / 2) * mod_math.sin(d_lon / 2)
+        * mod_math.cos(lat1) * mod_math.cos(lat2)
     )
-    c = 2 * mod_math.atan2(mod_math.sqrt(a), mod_math.sqrt(1-a))
+    c = 2 * mod_math.atan2(mod_math.sqrt(a), mod_math.sqrt(1 - a))
     d = EARTH_RADIUS * c
 
     return d
@@ -119,7 +119,7 @@ def calculate_max_speed(speeds_and_distances):
     average_distance = sum(distances) / float(size)
     standard_distance_deviation = mod_math.sqrt(
         sum(
-            map(lambda distance: (distance-average_distance)**2, distances)
+            map(lambda distance: (distance - average_distance) ** 2, distances)
         ) /
         size
     )
@@ -162,10 +162,10 @@ def calculate_uphill_downhill(elevations):
         if current_ele is None:
             return False
         if 0 < n < size - 1:
-            previous_ele = elevations[n-1]
-            next_ele = elevations[n+1]
+            previous_ele = elevations[n - 1]
+            next_ele = elevations[n + 1]
             if previous_ele is not None and current_ele is not None and next_ele is not None:
-                return previous_ele*.3 + current_ele*.4 + next_ele*.3
+                return previous_ele * .3 + current_ele * .4 + next_ele * .3
         return current_ele
 
     smoothed_elevations = list(map(__filter, range(size)))
@@ -174,7 +174,7 @@ def calculate_uphill_downhill(elevations):
 
     for n, elevation in enumerate(smoothed_elevations):
         if n > 0 and elevation is not None and smoothed_elevations is not None:
-            d = elevation - smoothed_elevations[n-1]
+            d = elevation - smoothed_elevations[n - 1]
             if d > 0:
                 uphill += d
             else:
@@ -292,7 +292,7 @@ def simplify_polyline(points, max_distance):
     tmp_max_distance_position = 1
 
     # Check distance of all points between begin and end, exclusive
-    for point_no in range(1,len(points)-1):
+    for point_no in range(1, len(points) - 1):
         point = points[point_no]
         d = abs(a * point.latitude + b * point.longitude + c)
         if d > tmp_max_distance:
@@ -408,7 +408,7 @@ class LocationDelta:
 
     def move_by_angle_and_distance(self, location):
         coef = mod_math.cos(location.latitude / 180. * mod_math.pi)
-        vertical_distance_diff   = mod_math.sin((90 - self.angle_from_north) / 180. * mod_math.pi) / ONE_DEGREE
+        vertical_distance_diff = mod_math.sin((90 - self.angle_from_north) / 180. * mod_math.pi) / ONE_DEGREE
         horizontal_distance_diff = mod_math.cos((90 - self.angle_from_north) / 180. * mod_math.pi) / ONE_DEGREE
         lat_diff = self.distance * vertical_distance_diff
         lon_diff = self.distance * horizontal_distance_diff / coef
